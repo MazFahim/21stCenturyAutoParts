@@ -4,8 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <style>
+        body{
+            margin: 0;
+        }
+
+        nav {
+            background-color: #008080;
+            overflow: hidden;
+        }
+
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        li{
+            width: auto;
+            margin-right: 30px;
+        }
+    </style>
 </head>
 <body>
-    
+    <nav>
+        <ul>
+            <li>Logo</li>
+            <li>Search Bar</li>
+            <li>HOME</li>
+            <li>USED SPARE PARTS</li>
+            <li>USED CARS</li>
+            <li>CAR SERVICES</li>
+            <li>ABOUT</li>
+            <li>CONTACT US</li>
+        </ul>
+    </nav>
 </body>
 </html>
