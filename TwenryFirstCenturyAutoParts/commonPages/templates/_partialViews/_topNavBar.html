@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
     <title>{% block title %}{% endblock %}</title>
     <style>
         body{
@@ -34,7 +35,16 @@
     <nav>
         <ul>
             <li><a href="/">Logo</a></li>
-            <li>Search Bar</li>
+            <li>
+                <div class="search-container">
+                    <form action="" method="get">
+                        <div style="position: relative;">
+                            <input type="text" placeholder="Search.." class="search-box" name="searchedItem" style="padding-left: 30px;">
+                            <img src="{% static 'icons-search.png' %}" alt="Search" style="height:21px; position: absolute; right: 8px; top: 50%; transform: translateY(-50%);">
+                        </div>
+                    </form>
+                </div>
+            </li>
             <li><a href="/">HOME</a></li>
             <li>USED SPARE PARTS</li>
             <li>USED CARS</li>
