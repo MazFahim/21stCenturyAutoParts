@@ -29,6 +29,22 @@
             width: auto;
             margin-right: 30px;
         }
+        .dropdown{
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-menu{
+            display: none;
+        }
+        .dropdown-menu li {
+            display: inline-block; 
+            padding: 8px 16px;
+        }
+        .dropdown-menu li a {
+            text-decoration: none;
+            color: black;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -46,12 +62,48 @@
                 </div>
             </li>
             <li><a href="/">HOME</a></li>
-            <li>USED SPARE PARTS</li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" onclick="show_spare_parts_menu()">USED SPARE PARTS ▼</a>
+                <ul class="dropdown-menu" id="dropdownMenuContent">
+                    <li><a href="/option1/">Option 1</a></li>
+                    <li><a href="/option2/">Option 2</a></li>
+                </ul>
+            </li>
+            
             <li>USED CARS</li>
-            <li>CAR SERVICES</li>
+            <li><a href="/car_services/">CAR SERVICES</a></li>
             <li><a href="/about/">ABOUT</a></li>
             <li><a href="/contact_us/">CONTACT US</a></li>
         </ul>
     </nav>
 </body>
+<script>
+    function show_spare_parts_menu(){
+        const dropdownContent = document.getElementById("dropdownMenuContent");
+        if(dropdownContent){
+            if(dropdownContent.style.display === "block"){
+                dropdownContent.style.display = "none";
+            }
+            else{
+                dropdownContent.style.display = "block"
+                fetch('/get-spare-parts-options/')
+                    .then(response => response.json())
+                    .then(data =>{
+                        dropdownContent.innerHTML = "";
+                     data.forEach(option =>{
+                        const listItem = document.createElement("li");
+                        const link = document.createElement("a");
+                        link.href = option.option_url;
+                        link.textContent = option.option_title;
+                        listItem.appendChild(link);
+                        dropdownContent.appendChild(listItem);
+                        console.log('Completed the loop');
+                     });
+                    })
+                    .catch(error => console.error('Error:',error));
+            }
+            dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+        }
+    }
+</script>
 </html>
