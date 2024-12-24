@@ -18,7 +18,7 @@ def about(request):
     template = loader.get_template('about.html')
     return HttpResponse(template.render())
 
-def about(request):
+def car_services(request):
     template = loader.get_template('car_services.html')
     return HttpResponse(template.render())
 
