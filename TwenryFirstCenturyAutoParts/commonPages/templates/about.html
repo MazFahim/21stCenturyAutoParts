@@ -28,6 +28,10 @@
             margin-top: 10px;
             font-size: 2.5em;
         }
+        .message-section img{
+            height: 300px;
+            width: 240px;
+        }
         .message-section p{
             font-size: 1.1em;
             line-height: 1.4;
@@ -36,6 +40,7 @@
 </head>
 <body>
     {% include "_partialViews/_topNavBar.html" %}
+    {% load static %}
 
     <div class="about-section">
         <h1>About Us</h1>
@@ -51,9 +56,9 @@
     <div></div>
 
     <div class="message-section">
-        <h1>Message</h1>
-        <img src="" alt="Founder's Image">
-        <p>Why choose us - We make auto repair and maintenance more convenient for you.</p>
+        <h1>Messages</h1>
+        <img src="{% static 'images/FounderImage.jpeg' %}" alt="Founder's Image">
+        <p><strong>Why choose us</strong> - We make auto repair and maintenance more convenient for you.</p>
         <p>We are friendly, helpful and a professional group of people. Our professional mechanics know how to handle a wide range of car services.</p>
         <p>We get the job done right for you. Same day serivce & car wash for most repairs and maintenance.</p>
     </div>
