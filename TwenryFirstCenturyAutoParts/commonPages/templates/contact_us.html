@@ -4,13 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+    <style>
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background: url('https://via.placeholder.com/1200x300?text=Contact+Us+Banner') no-repeat center center;
+            background-size: cover;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: -30px; 
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 250px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
     {% include "_partialViews/_topNavBar.html" %}
 
-    <div>
-        <div>Banner</div>
-        <div></div>
+    <div class="banner"></div>
+
+    <div class="cards-container">
+        <div class="card">
+            <h3>Mobile Number</h3>
+            <p>+971 552626910</p>
+            <!-- <p>+971 567751491</p>
+            <p>+971 507802131</p> -->
+        </div>
+        <div class="card">
+            <h3>Email</h3>
+            <p>jahangirmr22@yahoo.com</p>
+        </div>
     </div>
 </body>
 </html>

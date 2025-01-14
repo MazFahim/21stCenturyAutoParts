@@ -4,24 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+
+    <style>
+        .slideshow-container {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .mySlides {
+            display: none;
+        }
+        img {
+            vertical-align: middle;
+            height: 300px;
+        }
+        .fade {
+            animation: fade 1.5s;
+        }
+        .used-spare-parts {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .car-item {
+            text-align: center;
+        }
+        .car-item img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .banner-section {
+            margin-top: 20px;
+        }
+        .banner {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .banner h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .banner img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .spare-parts-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+        .spare-part {
+            text-align: center;
+            flex: 1;
+        }
+        .spare-part img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .spare-part p {
+            margin-top: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+        @keyframes fade {
+            from {opacity: 0.4} 
+            to {opacity: 1}
+        }
+        </style>
+        
 </head>
 <body>
     {% include "_partialViews/_topNavBar.html" %}
 
-    <div>
-        SlideShow
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="https://via.placeholder.com/800x400?text=Image+1" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="https://via.placeholder.com/800x400?text=Image+2" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="https://via.placeholder.com/800x400?text=Image+3" style="width:100%">
+        </div>
     </div>
 
     <div>
         <span>ORIGINAL USED SPARE PARTS</span>
+        <div class="used-spare-parts">
+            <div class="car-item">
+                <img src="https://via.placeholder.com/300x200?text=Car+1" alt="Car 1">
+                <button>Check All</button>
+                <p>Car 1</p>
+            </div>
+            <div class="car-item">
+                <img src="https://via.placeholder.com/300x200?text=Car+2" alt="Car 2">
+                <button>Check All</button>
+                <p>Car 2</p>
+            </div>
+            <div class="car-item">
+                <img src="https://via.placeholder.com/300x200?text=Car+3" alt="Car 3">
+                <button>Check All</button>
+                <p>Car 3</p>
+            </div>
+        </div>
+        
     </div>
 
-    <div>
-        CAR SERVICING
-    </div>
-
-    <div>USED CARS LOW MILAGE WITH BEST PRICES</div>
+    <div class="banner-section">
+        <div class="banner">
+            <h2>CAR SERVICING</h2>
+            <img src="https://via.placeholder.com/800x400?text=Car+Servicing" alt="Car Servicing">
+        </div>
     
-    <div>RELATED PRODUCTS</div>
+        <div class="banner">
+            <h2>USED CARS LOW MILAGE WITH BEST PRICES</h2>
+            <img src="https://via.placeholder.com/800x400?text=Used+Cars+Low+Mileage" alt="Used Cars">
+        </div>
+    </div>
+    
+    <div class="spare-parts-section">
+        <div class="spare-part">
+            <img src="https://via.placeholder.com/200x150?text=Part+1" alt="Spare Part 1">
+            <p>Spare Part 1</p>
+        </div>
+        <div class="spare-part">
+            <img src="https://via.placeholder.com/200x150?text=Part+2" alt="Spare Part 2">
+            <p>Spare Part 2</p>
+        </div>
+        <div class="spare-part">
+            <img src="https://via.placeholder.com/200x150?text=Part+3" alt="Spare Part 3">
+            <p>Spare Part 3</p>
+        </div>
+        <div class="spare-part">
+            <img src="https://via.placeholder.com/200x150?text=Part+4" alt="Spare Part 4">
+            <p>Spare Part 4</p>
+        </div>
+    </div>
 </body>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+    </script>
 </html>
