@@ -21,6 +21,18 @@
         .fade {
             animation: fade 1.5s;
         }
+        .prev, .next{
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 16px;
+            color: white;
+            font-size: 18px;
+            user-select: none;
+        } 
+        .prev { left: 0; }
+        .next { right: 0; }
         .used-spare-parts {
             display: flex;
             justify-content: space-around;
@@ -94,17 +106,20 @@
 </head>
 <body>
     {% include "_partialViews/_topNavBar.html" %}
+    {% load static %}
 
     <div class="slideshow-container">
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
         <div class="mySlides fade">
-            <img src="https://via.placeholder.com/800x400?text=Image+1" style="width:100%">
+            <img src="{% static 'images/garage2.jpeg' %}" style="width:100%">
         </div>
         <div class="mySlides fade">
-            <img src="https://via.placeholder.com/800x400?text=Image+2" style="width:100%">
+            <img src="{% static 'images/garage3.jpeg' %}" style="width:100%">
         </div>
         <div class="mySlides fade">
-            <img src="https://via.placeholder.com/800x400?text=Image+3" style="width:100%">
+            <img src="{% static 'images/garage4.jpeg' %}" style="width:100%">
         </div>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
     </div>
 
     <div>
@@ -174,7 +189,14 @@
         slideIndex++;
         if (slideIndex > slides.length) {slideIndex = 1}
         slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 3000); // Change image every 3 seconds
+        setTimeout(showSlides, 7000); // Change image every 3 seconds
+    }
+
+    function changeSlide(n) {
+        slideIndex += n;
+        if (slideIndex > slides.length) slideIndex = 1;
+        if (slideIndex < 1) slideIndex = slides.length;
+        showSlides();
     }
     </script>
 </html>
