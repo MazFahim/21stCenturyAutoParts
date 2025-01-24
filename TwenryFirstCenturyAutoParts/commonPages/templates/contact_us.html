@@ -5,19 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <style>
-        .banner {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            background: url('https://via.placeholder.com/1200x300?text=Contact+Us+Banner') no-repeat center center;
+        .banner{
+            background: url('/static/images/banner4.jpeg') no-repeat center center;
             background-size: cover;
+            height: 400px;
         }
-
         .cards-container {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: -30px; 
+            gap: 450px;
+            margin-top: -150px; 
         }
 
         .card {
@@ -43,20 +40,32 @@
 </head>
 <body>
     {% include "_partialViews/_topNavBar.html" %}
+    {% load static %}
 
-    <div class="banner"></div>
+    <div class="banner">
+
+    </div>
 
     <div class="cards-container">
         <div class="card">
-            <h3>Mobile Number</h3>
+            <h3>Call</h3>
+            <p>Call us or send a meesage on whatsapp if you have anything to discuss!!!</p>
             <p>+971 552626910</p>
             <!-- <p>+971 567751491</p>
             <p>+971 507802131</p> -->
         </div>
         <div class="card">
             <h3>Email</h3>
+            <p>If emailing is more comfortable to you, you can use this email address</p>
             <p>jahangirmr22@yahoo.com</p>
         </div>
+    </div>
+
+    <div class="info-container">
+        <h2>Our Location</h2>
+        <p>Our office is located in Dubai, UAE. You can visit us at the following address:</p>
+        <p>Al Qusais Industrial Area 1, Dubai, UAE</p>
+
     </div>
 </body>
 </html>
