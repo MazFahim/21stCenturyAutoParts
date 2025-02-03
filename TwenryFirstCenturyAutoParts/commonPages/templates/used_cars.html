@@ -8,6 +8,18 @@
 <body>
     {% include "_partialViews/_topNavBar.html" %}
 
-    
+    <h2>Used Cars</h2>
+    <div class="cars-container">
+        {% for car in cars %}
+            <div class="car-card">
+                {% if car.image1 %}
+                    <img src="{{ car.image1.url }}" alt="{{ car.used_car_title }}" width="200">
+                {% else %}
+                    <p>No image available</p>
+                {% endif %}
+                <h3>{{ car.used_car_title }}</h3>
+            </div>
+        {% endfor %}
+    </div>
 </body>
 </html>
