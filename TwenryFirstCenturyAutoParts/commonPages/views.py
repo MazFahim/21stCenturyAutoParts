@@ -23,8 +23,12 @@ def car_services(request):
     return HttpResponse(template.render())
 
 def used_cars(request):
+    cars = UsedCars.objects.all()
+    context = {
+        'cars': cars
+    }
     template = loader.get_template('used_cars.html')
-    return HttpResponse(template.render())
+    return HttpResponse(template.render(context, request))
 
 #Used Spare Parts function
 def get_spare_parts_options(request):
