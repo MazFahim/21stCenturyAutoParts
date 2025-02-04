@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, JsonResponse
 from django.template import loader
 from .models import *
@@ -29,6 +29,10 @@ def used_cars(request):
     }
     template = loader.get_template('used_cars.html')
     return HttpResponse(template.render(context, request))
+
+def used_car_detail(request, car_id):
+    car = get_object_or_404(UsedCars, pk=car_id)
+    return render(request, 'used_car_detail.html', {'car': car})
 
 #Used Spare Parts function
 def get_spare_parts_options(request):

@@ -7,6 +7,9 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('car_services/', views.car_services, name='car_services'),
     path('used_cars/', views.used_cars, name='used_cars'),
+
+    #path for details page
+    path('used_car_detail/<int:car_id>/', views.used_car_detail, name='used_car_detail'),
     
     #paths for data fetching using ajax
     path('get-spare-parts-options/', views.get_spare_parts_options, name='get_spare_parts_options'),
