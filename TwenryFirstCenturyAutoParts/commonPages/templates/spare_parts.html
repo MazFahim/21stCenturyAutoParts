@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spare Parts</title>
+</head>
+<body>
+    {% include "_partialViews/_topNavBar.html" %}
+
+    <h2>Used Cars</h2>
+    <div class="cars-container">
+        {% for parts in spareParts %}
+            <a href="{% url 'spare_part_detail' parts.spare_part_id %}" class="car-card-link">
+                <div class="car-card">
+                    {% if parts.image %}
+                        <img src="{{ parts.image.url }}" alt="{{ parts.spare_part_title }}" width="200">
+                    {% else %}
+                        <p>No image available</p>
+                    {% endif %}
+                    <h3>{{ parts.spare_part_title }}</h3>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</body>
+</html>
