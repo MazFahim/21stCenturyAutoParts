@@ -12,3 +12,5 @@ class UsedCarsAdmin(admin.ModelAdmin):
 
 admin.site.register(UsedSparePartsOptions)
 admin.site.register(UsedCars, UsedCarsAdmin)
+admin.site.register(SparePart)
+admin.site.register(RelatedSpareParts)
