@@ -9,8 +9,8 @@
     {% include "_partialViews/_topNavBar.html" %}
 
     <h2>{{ car.used_car_title }}</h2>
-    {% if car.image1 %}
-        <img src="{{ car.image1.url }}" alt="{{ car.used_car_title }}" width="300">
+    {% if car.mainImage %}
+        <img src="{{ car.mainImage.url }}" alt="{{ car.used_car_title }}" width="300">
     {% endif %}
     <p>Mileage: {{ car.milage }} km</p>
     <p>Description:</p>
