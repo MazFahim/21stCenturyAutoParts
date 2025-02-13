@@ -50,5 +50,5 @@ def spare_parts(request):
     return HttpResponse(template.render(context, request))
 
 def spare_part_detail(request, spare_part_id):
-    spare_part = get_object_or_404(UsedCars, pk=spare_part_id)
+    spare_part = get_object_or_404(SparePart, pk=spare_part_id)
     return render(request, 'spare_part_detail.html', {'spare_part': spare_part})
