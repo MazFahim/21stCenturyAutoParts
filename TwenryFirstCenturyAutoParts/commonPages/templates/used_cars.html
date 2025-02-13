@@ -13,8 +13,8 @@
         {% for car in cars %}
             <a href="{% url 'used_car_detail' car.used_cars_id %}" class="car-card-link">
                 <div class="car-card">
-                    {% if car.image1 %}
-                        <img src="{{ car.image1.url }}" alt="{{ car.used_car_title }}" width="200">
+                    {% if car.mainImage %}
+                        <img src="{{ car.mainImage.url }}" alt="{{ car.used_car_title }}" width="200">
                     {% else %}
                         <p>No image available</p>
                     {% endif %}
