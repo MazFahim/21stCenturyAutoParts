@@ -20,6 +20,9 @@ class UsedCars(models.Model):
     interiorView = models.ImageField(upload_to='used_cars_images/', blank=True, null=True)
     backSideImage = models.ImageField(upload_to='used_cars_images/', blank=True, null=True)
     extraImage = models.ImageField(upload_to='used_cars_images/', blank=True, null=True)
+    image1 = models.ImageField(upload_to='used_cars_images/', blank=True, null=True)
+    image2 = models.ImageField(upload_to='used_cars_images/', blank=True, null=True)
+    image3 = models.ImageField(upload_to='used_cars_images/', blank=True, null=True)
 
     def __str__(self):
         return self.used_car_title
