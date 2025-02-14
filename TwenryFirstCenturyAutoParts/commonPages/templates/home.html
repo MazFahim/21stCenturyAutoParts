@@ -8,13 +8,13 @@
     <style>
         .slideshow-container {
             position: relative;
-            max-width: 1000px;
+            max-width: 100%;
             margin: auto;
         }
         .mySlides {
             display: none;
         }
-        img {
+        .slideshow-container img {
             vertical-align: middle;
             height: 300px;
         }
@@ -40,6 +40,10 @@
             margin-top: 10px;
             margin-bottom: 10px; 
         }
+        img {
+            vertical-align: middle;
+            height: 300px;
+        }
         .used-spare-parts .car-item {
             display: inline-block;
             text-align: center;
@@ -48,6 +52,7 @@
         .used-spare-parts {
             display: flex;
             justify-content: space-around;
+            align-items: center;
             margin-top: 20px;
         }
         .car-item {
@@ -55,14 +60,24 @@
         }
         .car-item img {
             width: 200px;
-            height: auto;
+            height: 200px;
+            object-fit: contain;
             display: block;
             margin: 0 auto;
         }
         button {
-            margin-top: 10px;
-            padding: 5px 10px;
+            background-color: #0d1775;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 14px;
+            border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05); 
         }
         .banner-section {
             margin-top: 20px;
