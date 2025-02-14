@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+<body>
+    {% include "_partialViews/_topNavBar.html" %}
+    {% load static %}
+
+    <h2>Search Results for "{{ query }}"</h2>
+    
+    <h3>Used Cars</h3>
+    {% for car in usedCars %}
+        <p>{{ car.used_car_title }}</p>
+    {% empty %}
+        <p>No matching cars found.</p>
+    {% endfor %}
+
+    <h3>Spare Parts</h3>
+    {% for part in spareParts %}
+        <p>{{ part.spare_part_title }}</p>
+    {% empty %}
+        <p>No matching spare parts found.</p>
+    {% endfor %}
+</body>
+</html>

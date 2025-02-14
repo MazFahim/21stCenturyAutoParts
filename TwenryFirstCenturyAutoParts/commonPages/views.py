@@ -52,3 +52,17 @@ def spare_parts(request):
 def spare_part_detail(request, spare_part_id):
     spare_part = get_object_or_404(SparePart, pk=spare_part_id)
     return render(request, 'spare_part_detail.html', {'spare_part': spare_part})
+
+
+#search related functions
+def search_results(request):
+    query = request.GET.get('q', '')
+    usedCars = UsedCars.objects.filter(used_car_title__icontains=query)
+    spareParts = SparePart.objects.filter(spare_part_title__icontains=query)
+    context = {
+        'query': query,
+        'usedCars': usedCars,
+        'spareParts': spareParts
+    }
+    template = loader.get_template('search_results.html')
+    return HttpResponse(template.render(context, request))

@@ -63,10 +63,12 @@
             <li><a href="/">Logo</a></li>
             <li>
                 <div class="search-container">
-                    <form action="" method="get">
+                    <form action="{% url 'search_results' %}" method="GET">
                         <div style="position: relative;">
-                            <input type="text" placeholder="Search.." class="search-box" name="searchedItem" style="padding-left: 30px;">
-                            <img src="{% static 'icons-search.png' %}" alt="Search" style="height:21px; position: absolute; right: 8px; top: 50%; transform: translateY(-50%);">
+                            <input type="text" placeholder="Search for cars or spare parts" class="search-box" name="q" style="padding-left: 30px;">
+                            <button type="submit" style="background: none; border: none; position: absolute; right: 8px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+                                <img src="{% static 'icons-search.png' %}" alt="Search" style="height:21px;">
+                            </button>
                         </div>
                     </form>
                 </div>

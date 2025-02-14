@@ -15,4 +15,7 @@ urlpatterns = [
     
     #paths for data fetching using ajax
     path('get-spare-parts-options/', views.get_spare_parts_options, name='get_spare_parts_options'),
+
+    #path for searching
+    path('search_results/', views.search_results, name='search_results'),
 ]
