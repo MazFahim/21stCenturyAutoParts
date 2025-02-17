@@ -53,6 +53,15 @@ def spare_part_detail(request, spare_part_id):
     spare_part = get_object_or_404(SparePart, pk=spare_part_id)
     return render(request, 'spare_part_detail.html', {'spare_part': spare_part})
 
+def spare_parts_by_company(request, company_name):
+    spare_parts = SparePart.objects.filter(spare_part_title__icontains=company_name)
+    context = {
+        'spareParts': spare_parts,
+        'company_name': company_name
+    }
+    template = loader.get_template('spare_parts_by_company.html')
+    return HttpResponse(template.render(context, request))
+
 
 #search related functions
 def search_results(request):

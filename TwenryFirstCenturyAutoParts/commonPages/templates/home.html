@@ -94,7 +94,7 @@
         }
         .banner img {
             width: 100%;
-            max-width: 800px;
+            max-width: 100%;
             height: auto;
             display: block;
             margin: 0 auto;
@@ -153,17 +153,17 @@
         <div class="used-spare-parts">
             <div class="car-item">
                 <img src="{% static 'logo/toyota1.png' %}" alt="Car 1">
-                <button>Check All</button>
+                <a href="{% url 'spare_parts_by_company' 'Toyota' %}"><button>Check All</button></a>
                 <p>Toyota</p>
             </div>
             <div class="car-item">
                 <img src="{% static 'logo/hondaLogo.png' %}" alt="Car 2">
-                <button>Check All</button>
+                <a href="{% url 'spare_parts_by_company' 'Honda' %}"><button>Check All</button></a>
                 <p>Honda</p>
             </div>
             <div class="car-item">
                 <img src="{% static 'logo/nissanLogo.png' %}" alt="Car 3">
-                <button>Check All</button>
+                <a href="{% url 'spare_parts_by_company' 'Nissan' %}"><button>Check All</button></a>
                 <p>Nissan</p>
             </div>
         </div>
@@ -175,11 +175,6 @@
             <!-- <h2>CAR SERVICING</h2> -->
             <img src="{% static 'images/banner2.jpeg' %}" alt="Car Servicing">
         </div>
-    
-        <!-- <div class="banner">
-            <h2>USED CARS LOW MILAGE WITH BEST PRICES</h2>
-            <img src="https://via.placeholder.com/800x400?text=Used+Cars+Low+Mileage" alt="Used Cars">
-        </div> -->
     </div>
     
     <div class="spare-parts-section">
