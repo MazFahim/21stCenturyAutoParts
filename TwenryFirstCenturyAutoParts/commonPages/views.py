@@ -6,8 +6,12 @@ from .models import *
 
 #Stand Alone Pages
 def home(request):
+    featured_spare_parts = SparePart.objects.all()[:4]
+    context = {
+        'featured_spare_parts': featured_spare_parts
+    }
     template = loader.get_template('home.html')
-    return HttpResponse(template.render())
+    return HttpResponse(template.render(context, request))
 
 
 def contact_us(request):

@@ -178,23 +178,14 @@
     </div>
     
     <div class="spare-parts-section">
-        <div class="spare-part">
-            <img src="https://via.placeholder.com/200x150?text=Part+1" alt="Spare Part 1">
-            <p>Spare Part 1</p>
-        </div>
-        <div class="spare-part">
-            <img src="https://via.placeholder.com/200x150?text=Part+2" alt="Spare Part 2">
-            <p>Spare Part 2</p>
-        </div>
-        <div class="spare-part">
-            <img src="https://via.placeholder.com/200x150?text=Part+3" alt="Spare Part 3">
-            <p>Spare Part 3</p>
-        </div>
-        <div class="spare-part">
-            <img src="https://via.placeholder.com/200x150?text=Part+4" alt="Spare Part 4">
-            <p>Spare Part 4</p>
-        </div>
+        {% for part in featured_spare_parts %}
+            <div class="spare-part">
+                <img src="{{ part.image.url }}" alt="{{ part.spare_part_title }}">
+                <p>{{ part.spare_part_title }}</p>
+            </div>
+        {% endfor %}
     </div>
+    
 </body>
 
 <script>
