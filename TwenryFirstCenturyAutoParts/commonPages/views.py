@@ -55,7 +55,11 @@ def spare_parts(request):
 
 def spare_part_detail(request, spare_part_id):
     spare_part = get_object_or_404(SparePart, pk=spare_part_id)
-    return render(request, 'spare_part_detail.html', {'spare_part': spare_part})
+    related_spare_parts = RelatedSpareParts.objects.filter(spare_part=spare_part)
+    return render(request, 'spare_part_detail.html', 
+                  {'spare_part': spare_part,
+                   'related_spare_parts': related_spare_parts
+                   })
 
 def spare_parts_by_company(request, company_name):
     spare_parts = SparePart.objects.filter(spare_part_title__icontains=company_name)
