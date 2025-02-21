@@ -16,15 +16,18 @@
         ul{
             list-style-type: none;
             margin: 0;
-            padding: 0;
+            padding: 0 20px;
             overflow: hidden;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-between;
         }
         li{
             width: auto;
             margin-right: 30px;
+        }
+        li:first-child {
+            margin-right: auto;
         }
         a{
             display: block;
@@ -34,10 +37,15 @@
             text-decoration: none;
         }
         .search-container{
-            margin-top: 5px;
+            margin-top: 3px;
+            margin-bottom: 3px;
         }
         .search-container input[type="text"] {
-            border-radius: 5px;
+            border-radius: 15px;
+            padding: 6px 9px;
+            border: 1px solid #ccc;
+            width: 250px;
+    font-size: 14px;
         }
         .dropdown{
             position: relative;
