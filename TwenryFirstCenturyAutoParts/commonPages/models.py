@@ -23,6 +23,7 @@ class UsedCars(models.Model):
     image1 = models.ImageField(upload_to='used_cars_images/', blank=True, null=True)
     image2 = models.ImageField(upload_to='used_cars_images/', blank=True, null=True)
     image3 = models.ImageField(upload_to='used_cars_images/', blank=True, null=True)
+    company = models.CharField(max_length=100, default="unknown")
 
     def __str__(self):
         return self.used_car_title
@@ -35,6 +36,7 @@ class SparePart(models.Model):
     categories = models.TextField(blank=True, null=True)
     tags = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to='spare_parts_images/', blank=True, null=True)
+    company = models.CharField(max_length=100, default="unknown")
 
     def __str__(self):
         return self.spare_part_title
