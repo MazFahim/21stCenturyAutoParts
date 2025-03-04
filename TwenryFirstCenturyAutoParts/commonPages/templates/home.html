@@ -16,7 +16,7 @@
         }
         .slideshow-container img {
             vertical-align: middle;
-            height: 300px;
+            height: 450px;
         }
         .fade {
             animation: fade 1.5s;
@@ -137,13 +137,13 @@
     <div class="slideshow-container">
         <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
         <div class="mySlides fade">
-            <img src="{% static 'images/garage2.jpeg' %}" style="width:100%">
+            <img src="{% static 'images/garage21.jpeg' %}" style="width:100%">
         </div>
         <div class="mySlides fade">
-            <img src="{% static 'images/garage3.jpeg' %}" style="width:100%">
+            <img src="{% static 'images/garage31.jpeg' %}" style="width:100%">
         </div>
         <div class="mySlides fade">
-            <img src="{% static 'images/garage4.jpeg' %}" style="width:100%">
+            <img src="{% static 'images/garage41.jpeg' %}" style="width:100%">
         </div>
         <a class="next" onclick="changeSlide(1)">&#10095;</a>
     </div>
@@ -189,26 +189,24 @@
 </body>
 
 <script>
-    let slideIndex = 0;
-    showSlides();
+    let slideIndex = 1;
+    showSlides(slideIndex);
     
-    function showSlides() {
+    function showSlides(n) {
         let i;
         const slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) { slideIndex = 1; }
+        if (n < 1) { slideIndex = slides.length; }
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
         slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 7000); // Change image every 3 seconds
     }
 
     function changeSlide(n) {
-        slideIndex += n;
-        if (slideIndex > slides.length) slideIndex = 1;
-        if (slideIndex < 1) slideIndex = slides.length;
-        showSlides();
+        showSlides(slideIndex += n);
     }
-    </script>
+
+    setInterval(() => { changeSlide(1); }, 3000);
+</script>
 </html>
