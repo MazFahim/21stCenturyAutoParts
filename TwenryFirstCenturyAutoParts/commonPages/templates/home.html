@@ -54,6 +54,8 @@
             justify-content: space-around;
             align-items: center;
             margin-top: 20px;
+            font-weight: bolder;
+            font-size: large;
         }
         .car-item {
             text-align: center;
@@ -149,7 +151,7 @@
     </div>
 
     <div>
-        <span>ORIGINAL USED SPARE PARTS</span>
+        <span>AVAILABLE SPARE PARTS</span>
         <div class="used-spare-parts">
             <div class="car-item">
                 <img src="{% static 'logo/toyota1.png' %}" alt="Car 1">
@@ -165,6 +167,11 @@
                 <img src="{% static 'logo/nissanLogo.png' %}" alt="Car 3">
                 <a href="{% url 'spare_parts_by_company' 'Nissan' %}"><button>Check All</button></a>
                 <p>Nissan</p>
+            </div>
+            <div class="car-item">
+                <img src="{% static 'logo/Lexus-Logo-PNG-Image.png' %}" alt="Car 4">
+                <a href="{% url 'spare_parts_by_company' 'Lexus' %}"><button>Check All</button></a>
+                <p>Lexus</p>
             </div>
         </div>
         
