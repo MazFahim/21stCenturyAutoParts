@@ -9,6 +9,7 @@
             display: flex;
             gap: 20px;
             margin: 20px;
+            margin-top: 50px;
             margin-left: 150px;
         }
         .left {
@@ -17,15 +18,16 @@
             align-items: center;
         }
         .left img {
-            width: 400px;
+            margin-top: 30px;
+            width: 420px;
         }
         .right {
             flex: 2;
             margin-left: 150px;
         }
         .related-parts {
-            margin-top: 40px;
-            margin-left: 150px;
+            margin-top: 60px;
+            margin-left: 120px;
         }
         .related-parts h3 {
             margin-bottom: 10px;
@@ -52,13 +54,13 @@
 
     <div class="container">
         <div class="left">
-            <h2>{{ spare_part.spare_part_title }}</h2>
             {% if spare_part.image %}
                 <img src="{{ spare_part.image.url }}" alt="{{ spare_part.spare_part_title }}" width="300">
             {% endif %}    
         </div>
         <div class="right">
-            <p>Description:</p>
+            <h1>{{ spare_part.spare_part_title }}</h1>
+            <p style="color: #B2BEB5;">Description:</p>
             <p>{{ spare_part.description }}</p>
         </div>    
     </div>
