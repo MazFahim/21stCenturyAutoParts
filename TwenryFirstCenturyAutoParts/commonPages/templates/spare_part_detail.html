@@ -47,6 +47,16 @@
             display: block;
             margin: 0 auto;
         }
+        
+        #description-list {
+            list-style-type: disc !important;
+            display: block !important; /* Ensures it behaves as a list */
+            padding-left: 40px !important; /* Ensures indentation */
+        }
+
+        #description-list li {
+            display: list-item !important; /* Forces list items to show bullets */
+        }
     </style>
 </head>
 <body>
@@ -61,19 +71,26 @@
         <div class="right">
             <h1>{{ spare_part.spare_part_title }}</h1>
             <p style="color: #B2BEB5;">Description:</p>
-            <p>{{ spare_part.description }}</p>
+            <!-- <p>{{ spare_part.description }}</p> -->
+            <ul id="description-list">
+                {% for sentence in sentences %}
+                    <li>{{ sentence }}</li>
+                {% endfor %}
+            </ul>
         </div>    
     </div>
     
     <div class="related-parts">
         <h3>Related Spare Parts</h3>
         <div class="related-grid">
-            {% for part in spare_part.related_spare_parts.all|slice:":4" %}
+            {% for part in spare_part.related_spare_parts.all|slice:":6" %}
                 <div class="related-item">
                     {% if part.image %}
-                        <img src="{{ part.image.url }}" alt="{{ part.spare_part_title  }}">
+                        <a href="{% url 'spare_part_detail' part.spare_part_id %}">
+                            <img src="{{ part.image.url }}" alt="{{ part.spare_part_title  }}">
+                            <p>{{ part.spare_part_title }}</p>
+                        </a>
                     {% endif %}
-                    <p>{{ part.spare_part_title }}</p>
                 </div>
             {% endfor %}
         </div>

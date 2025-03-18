@@ -23,9 +23,12 @@ def about(request):
     template = loader.get_template('about.html')
     return HttpResponse(template.render())
 
+
 def car_services(request):
     template = loader.get_template('car_services.html')
     return HttpResponse(template.render())
+
+
 
 #Used Cars function
 def used_cars(request):
@@ -36,14 +39,18 @@ def used_cars(request):
     template = loader.get_template('used_cars.html')
     return HttpResponse(template.render(context, request))
 
+
 def used_car_detail(request, car_id):
     car = get_object_or_404(UsedCars, pk=car_id)
     return render(request, 'used_car_detail.html', {'car': car})
+
+
 
 #Used Spare Parts function
 def get_spare_parts_options(request):
     options = UsedSparePartsOptions.objects.all().values('option_title', 'option_url')
     return JsonResponse(list(options), safe=False)
+
 
 def spare_parts(request):
     spareParts = SparePart.objects.all()
@@ -53,13 +60,15 @@ def spare_parts(request):
     template = loader.get_template('spare_parts.html')
     return HttpResponse(template.render(context, request))
 
+
 def spare_part_detail(request, spare_part_id):
     spare_part = get_object_or_404(SparePart, pk=spare_part_id)
-    related_spare_parts = RelatedSpareParts.objects.filter(spare_part=spare_part)
+    sentences = [sentences.strip() + '.' for sentences in spare_part.description.split('.') if sentences.strip()]
+    
     return render(request, 'spare_part_detail.html', 
-                  {'spare_part': spare_part,
-                   'related_spare_parts': related_spare_parts
+                  {'spare_part': spare_part, 'sentences': sentences
                    })
+
 
 def spare_parts_by_company(request, company_name):
     spare_parts = SparePart.objects.filter(spare_part_title__icontains=company_name)
