@@ -37,6 +37,7 @@ class SparePart(models.Model):
     tags = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to='spare_parts_images/', blank=True, null=True)
     company = models.CharField(max_length=100, default="unknown")
+    related_spare_parts = models.ManyToManyField('self', blank=True)
 
     def __str__(self):
         return self.spare_part_title

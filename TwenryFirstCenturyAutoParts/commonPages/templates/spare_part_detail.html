@@ -68,12 +68,12 @@
     <div class="related-parts">
         <h3>Related Spare Parts</h3>
         <div class="related-grid">
-            {% for part in related_spare_parts %}
+            {% for part in spare_part.related_spare_parts.all|slice:":4" %}
                 <div class="related-item">
-                    {% if part.related_spare_part_image %}
-                        <img src="{{ part.related_spare_part_image }}" alt="{{ part.related_spare_part_title }}">
+                    {% if part.image %}
+                        <img src="{{ part.image.url }}" alt="{{ part.spare_part_title  }}">
                     {% endif %}
-                    <p>{{ part.related_spare_part_title }}</p>
+                    <p>{{ part.spare_part_title }}</p>
                 </div>
             {% endfor %}
         </div>
