@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ spare_part.spare_part_title }}</title>
     <style>
+        body {
+            position: relative;
+            margin: 0;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/static/images/garage11.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            filter: blur(8px); /* Adjust blur intensity */
+            z-index: -1;
+        }
+
         .container {
             display: flex;
             gap: 20px;
@@ -41,6 +59,9 @@
             text-align: center;
             width: 150px;
         }
+        .related-item p{
+            color: #130101;
+        }
         .related-item img {
             width: 100px;
             height: auto;
@@ -52,6 +73,8 @@
             list-style-type: disc !important;
             display: block !important; /* Ensures it behaves as a list */
             padding-left: 40px !important; /* Ensures indentation */
+            color: #f1ebeb;
+            font-size: large;
         }
 
         #description-list li {
@@ -61,6 +84,7 @@
 </head>
 <body>
     {% include "_partialViews/_topNavBar.html" %}
+    {% load static %}
 
     <div class="container">
         <div class="left">
@@ -70,7 +94,7 @@
         </div>
         <div class="right">
             <h1>{{ spare_part.spare_part_title }}</h1>
-            <p style="color: #B2BEB5;">Description:</p>
+            <p style="color: #f5f8f6;">Description:</p>
             <!-- <p>{{ spare_part.description }}</p> -->
             <ul id="description-list">
                 {% for sentence in sentences %}
