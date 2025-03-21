@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ car.used_car_title }}</title>
+    <title>{{ used_car.used_car_title }}</title>
     <style>
         .container {
             display: flex;
@@ -17,12 +17,28 @@
             align-items: center;
         }
         .left img {
-            width: 400px;
+            margin-top: 30px;
+            width: 420px;
         }
         .right {
             flex: 2;
-            margin-top: 50px;
+            margin-top: 5px;
             margin-left: 150px;
+        }
+        .car-images {
+            text-align: center;
+        }
+        .other-images {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .other-images img {
+            width: 120px;
+            height: auto;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -31,16 +47,26 @@
 
     <div class="container">
         <div class="left">
-            <h2>{{ car.used_car_title }}</h2>
-            {% if car.mainImage %}
-                <img src="{{ car.mainImage.url }}" alt="{{ car.used_car_title }}" width="300">
+            {% if used_car.mainImage %}
+                <img src="{{ used_car.mainImage.url }}" alt="{{ used_car.used_car_title }}" width="300">
             {% endif %} 
         </div>
         <div class="right">
-            <p>Mileage: {{ car.milage }} km</p>
-            <p>Description:</p>
-            <p>{{ car.description }}</p>
+            <h2>{{ used_car.used_car_title }}</h2>
+            <p style="color: #f5f8f6;">Description:</p>
+            <p>Mileage: {{ used_car.milage }} km</p>
+            <p>{{ used_car.description }}</p>
         </div>    
+    </div>
+
+    <div class="car-images">
+        <div class="other-images">
+            {% for image in images %}
+                {% if image %}
+                    <img src="{{ image.url }}" alt="Car Image">
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
 </body>
 </html>
