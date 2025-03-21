@@ -41,23 +41,3 @@ class SparePart(models.Model):
 
     def __str__(self):
         return self.spare_part_title
-    
-
-class RelatedSpareParts(models.Model):
-    related_spare_part_id = models.AutoField(primary_key=True)
-    spare_part = models.ForeignKey(SparePart, on_delete=models.CASCADE)
-
-    @property
-    def related_spare_part_id(self):
-        return self.spare_part.spare_part_id
-
-    @property
-    def related_spare_part_title(self):
-        return self.spare_part.spare_part_title
-    
-    @property
-    def related_spare_part_image(self):
-        return self.spare_part.image.url if self.spare_part.image else None
-
-    def __str__(self):
-        return self.related_spare_part_title
