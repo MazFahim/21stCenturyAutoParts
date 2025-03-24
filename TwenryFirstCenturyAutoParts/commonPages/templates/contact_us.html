@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Contact Us</title>
     <style>
         .banner{
@@ -10,38 +11,62 @@
             background-size: cover;
             height: 400px;
         }
-        .cards-container {
+
+        .container {
             display: flex;
-            justify-content: center;
-            gap: 450px;
-            margin-top: -150px; 
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
         }
 
-        .card {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .info-section {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
             padding: 20px;
-            text-align: center;
-            width: 250px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .card h3 {
+        .info-column {
+            text-align: center;
+            width: 30%;
+        }
+        
+        .info-column h2, .info-column h3 {
             margin-bottom: 10px;
         }
 
-        .card p {
-            margin: 0;
-            font-size: 14px;
-            color: #555;
+        .social-links {
+            margin-top: 10px;
         }
 
-        .info-container {
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-size: 20px;
+        }
+
+        .location-section {
+            margin-top: 50px;
+            width: 80%;
+            padding: 20px;
+            background-color: #e6f7ff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .map-container {
             display: flex;
             justify-content: center;
-            gap: 400px;
-            margin-top: 50px;
+            margin-top: 20px;
+        }
+
+        iframe {
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -53,38 +78,45 @@
 
     </div>
 
-    <div class="cards-container">
-        <div class="card">
-            <h3>Call</h3>
-            <!-- <p>Call us or send a meesage on whatsapp if you have anything to discuss!!!</p> -->
-            <p>Mobile 1: +971 552626910</p>
-            <p>Mobile 2: +971567751491</p>
-            <p>Mobile 3: +971507802131</p>
+    
+    <div class="container">
+        <div class="info-section">
+            <div class="info-column">
+                <h2>Contact Details</h2>
+                <p>Mobile 1: +971567751491</p>
+                <p>Mobile 2: +971507802131</p>
+                <p>Mobile 3: +971507802131</p>
+            </div>
+            <div class="info-column">
+                <h3>Email</h3>
+                <p><a href="mailto:jahangirmr22@yahoo.com">jahangirmr22@yahoo.com</a></p>
+                <div class="social-links">
+                    <h3>Follow us on Social Media:</h3>
+                        <div style="display: flex; gap: 15px; margin-left: 50px;">
+                            <a href="https://www.facebook.com/profile.php?id=100087498919944&mibextid=LQQJ4d"
+                             target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/twenty_first_century_auto/profilecard/?igsh=OWJjZGM1MW5uZDJm"
+                             target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@21stcenturyautoel?_t=8qfxcNOJiki&_r=1"
+                             target="_blank"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                </div>
+                
+            </div>
         </div>
-        <div class="card">
-            <h3>Email</h3>
-            <!-- <p>If emailing is more comfortable to you, you can use this email address</p> -->
-            <p>jahangirmr22@yahoo.com</p>
-        </div>
-    </div>
 
-    <div class="info-container">
-        <div class="info-column">            
+        <div class="location-section">
             <h2>Our Location</h2>
             <p>Our office is located at the following address:</p>
             <p>Musaffah Industrial, M8, 2nd lane, plot no - 48</p>
-        </div>
-        <div class="info-column">            
-            <h2>Contact Details</h2>
-            <p>Mobile 1: +971567751491</p>
-            <p>Mobile 2: +971507802131</p>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3634.028633676204!2d54.5130204!3d24.3803073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e412f17487dcb%3A0x91cb094dcec3dd1c!2sTwenty%20First%20Century%20Auto%20%26%20Parts%20L.L.C!5e0!3m2!1sen!2sbd!4v1740020505063!5m2!1sen!2sbd" 
+                width="900" height="350" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
     </div>
-    <div class="map-container" style="display: flex; justify-content: center; margin-top: 50px;">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3634.028633676204!2d54.5130204!3d24.3803073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e412f17487dcb%3A0x91cb094dcec3dd1c!2sTwenty%20First%20Century%20Auto%20%26%20Parts%20L.L.C!5e0!3m2!1sen!2sbd!4v1740020505063!5m2!1sen!2sbd" 
-        width="900" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-    <div style="height: 150px;">
+
+    <div style="height: 100px;">
 
     </div>
 </body>
