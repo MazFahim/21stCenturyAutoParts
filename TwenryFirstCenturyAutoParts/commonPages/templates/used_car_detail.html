@@ -56,6 +56,10 @@
             <p style="color: #f5f8f6;">Description:</p>
             <p>Mileage: {{ used_car.milage }} km</p>
             <p>{{ used_car.description }}</p>
+            <a href="https://wa.me/+8801521400144?text=I'm interested in {{ used_car.used_car_title }} Check it out here: {{ request.build_absolute_uri }}"
+             target="_blank"
+             style="display: inline-block; background-color: #25D366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px;">
+                Contact on WhatsApp</a>
         </div>    
     </div>
 
