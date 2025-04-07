@@ -42,6 +42,12 @@
         .right {
             flex: 2;
             margin-left: 150px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 35px;
+            border-radius: 8px;
+            color: #f5f8f6;
+            text-align: justify;
+            margin-right: 45px;
         }
         .related-parts {
             margin-top: 60px;
@@ -101,6 +107,10 @@
                     <li>{{ sentence }}</li>
                 {% endfor %}
             </ul>
+            <a href="https://wa.me/+8801521400144?text=I'm interested in {{ spare_part.spare_part_title }} Check it out here: {{ request.build_absolute_uri }}"
+             target="_blank"
+             style="display: inline-block; background-color: #25D366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px;">
+                Contact on WhatsApp</a>
         </div>    
     </div>
     
