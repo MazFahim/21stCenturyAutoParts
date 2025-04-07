@@ -4,25 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Results</title>
+    <style>
+        .cars-container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-left: 50px;
+        }
+        .car-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            width: 200px;
+        }
+        
+        .car-card img {
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .car-card h3 {
+            margin: 0;
+        }
+            
+        .car-card-link {
+            text-decoration: none;
+            color: black;
+        }
+        .parts-container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-left: 50px;
+        }
+    </style>
 </head>
 <body>
     {% include "_partialViews/_topNavBar.html" %}
     {% load static %}
 
-    <h2>Search Results for "{{ query }}"</h2>
-    
-    <h3>Used Cars</h3>
-    {% for car in usedCars %}
-        <p>{{ car.used_car_title }}</p>
-    {% empty %}
-        <p>No matching cars found.</p>
-    {% endfor %}
+    <h2 style="margin-left: 50px;">Search Results for "{{ query }}"</h2>
+        
+    <h3 style="margin-left: 50px;">Used Cars</h3>
+    <div class="cars-container">
+        {% for car in usedCars %}
+        <a href="{% url 'used_car_detail' car.used_cars_id %}"
+         class="car-card-link">
+            <div class="car-card">
+                {% if car.mainImage %}
+                    <img src="{{ car.mainImage.url }}" alt="{{ car.used_car_title }}" width="200">
+                {% else %}
+                    <p>No image available</p>
+                {% endif %}
+                <h3>{{ car.used_car_title }}</h3>
+            </div>
+        </a>
+        {% empty %}
+            <p>No matching cars found.</p>
+        {% endfor %}
+    </div>
 
-    <h3>Spare Parts</h3>
-    {% for part in spareParts %}
-        <p>{{ part.spare_part_title }}</p>
-    {% empty %}
-        <p>No matching spare parts found.</p>
-    {% endfor %}
+    <h3 style="margin-left: 50px;">Spare Parts</h3>
+    <div class="parts-container">
+        {% for parts in spareParts %}
+        <a href="{% url 'spare_part_detail' parts.spare_part_id %}" class="car-card-link">
+            <div class="car-card">
+                {% if parts.image %}
+                    <img src="{{ parts.image.url }}" alt="{{ parts.spare_part_title }}" width="200">
+                {% else %}
+                    <p>No image available</p>
+                {% endif %}
+                <h3>{{ parts.spare_part_title }}</h3>
+            </div>
+        </a>
+        {% empty %}
+            <p>No matching spare parts found.</p>
+        {% endfor %}
+    </div>
+    
 </body>
 </html>
