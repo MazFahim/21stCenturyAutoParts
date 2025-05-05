@@ -25,25 +25,38 @@
         li{
             width: auto;
             margin-right: 30px;
+            margin-top: 10px;
         }
         li:first-child {
             margin-right: auto;
         }
         a{
             display: block;
-            color: #708090;
+            color: #464e57;
             text-align: center;
             padding: 6px 6px;
             text-decoration: none;
             font-weight: bolder;
         }
+        #logo{
+            height: 25px;
+            width: auto;
+            margin-top: -4px;
+            margin-left: 20px;
+            padding-top: 7px;
+            padding-bottom: 9px;
+            transform: scale(5.1);
+            transform-origin: left center;
+            object-fit: contain;
+        }
         .search-container{
-            margin-top: 3px;
+            margin-top: -1px;
             margin-bottom: 3px;
+            padding-bottom: 3px;
         }
         .search-container input[type="text"] {
             border-radius: 15px;
-            padding: 6px 9px;
+            padding: 11px 15px;
             border: 1px solid #ccc;
             width: 250px;
             font-size: 14px;
@@ -67,9 +80,11 @@
     </style>
 </head>
 <body>
+    {% load static %}
+
     <nav>
         <ul>
-            <li><a href="/">Logo</a></li>
+            <li><a href="/"><img id="logo" src="{% static 'logo/logo2.png' %}" alt="logo"></a></li>
             <li>
                 <div class="search-container">
                     <form action="{% url 'search_results' %}" method="GET">
