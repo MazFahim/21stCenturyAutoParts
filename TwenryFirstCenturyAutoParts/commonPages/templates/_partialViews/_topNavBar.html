@@ -78,6 +78,38 @@
             display: block;
         }
     </style>
+    <style>
+        @media screen and (max-width: 768px) {
+            ul {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px;
+            }
+            li {
+                width: 100%;
+                margin: 5px 0;
+            }
+            a {
+                padding: 10px;
+                text-align: left;
+                font-size: 14px;
+            }
+            .search-container input[type="text"] {
+                width: 90%;
+                margin-top: 10px;
+            }
+            #logo {
+                transform: scale(4.5);
+                margin-left: -10px;
+            }
+            .search-container form {
+                width: 100%;
+            }
+            .search-container {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     {% load static %}
