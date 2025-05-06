@@ -79,7 +79,7 @@
         }
         button:hover {
             background-color: #0056b3;
-            transform: scale(1.05); 
+            transform: scale(1.1); 
         }
         .banner-section {
             margin-top: 20px;
@@ -128,6 +128,11 @@
         @keyframes fade {
             from {opacity: 0.4} 
             to {opacity: 1}
+        }
+        #see-more-spare-parts {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 60px;
         }
         </style>
         
@@ -193,6 +198,9 @@
         {% endfor %}
     </div>
     
+    <div id="see-more-spare-parts">
+        <a href="/spare_parts/"><button>See More >>></button></a>
+    </div>
 </body>
 
 <script>
