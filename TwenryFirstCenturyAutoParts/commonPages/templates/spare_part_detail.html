@@ -19,7 +19,7 @@
             height: 100%;
             background: url('/static/images/garage11.jpeg') no-repeat center center fixed;
             background-size: cover;
-            filter: blur(8px); /* Adjust blur intensity */
+            filter: blur(8px); 
             z-index: -1;
         }
 
@@ -85,6 +85,68 @@
 
         #description-list li {
             display: list-item !important; /* Forces list items to show bullets */
+        }
+    </style>
+    <style>
+        @media screen and (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+                margin-left: 50px;
+                margin-right: 50px;
+            }
+
+            .left img {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .right {
+                margin-left: 0;
+                margin-right: 0;
+                padding: 20px;
+            }
+
+            .related-parts {
+                margin-left: 50px;
+                margin-right: 50px;
+            }
+
+            .related-item p {
+                color: #f8f6f6;
+            }
+
+            .related-grid {
+                justify-content: center;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .left img {
+                width: 100%;
+            }
+
+            .related-item {
+                width: 100%;
+            }
+
+            .related-item img {
+                width: 220px;
+            }
+
+            .related-item p {
+                text-align: center;
+                color: #f8f6f6;
+            }
+
+            #description-list {
+                padding-left: 20px !important;
+                font-size: medium;
+            }
+
+            a[href^="https://wa.me/"] {
+                width: 90%;
+                text-align: center;
+            }
         }
     </style>
 </head>
