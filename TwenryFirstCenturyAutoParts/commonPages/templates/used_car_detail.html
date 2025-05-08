@@ -25,7 +25,7 @@
         .container {
             display: flex;
             gap: 20px;
-            margin: 20px;
+            margin: 5px;
             margin-left: 150px;
         }
         .left {
@@ -41,21 +41,73 @@
             flex: 2;
             margin-top: 5px;
             margin-left: 150px;
+            color: #f5f8f6;
         }
         .car-images {
             text-align: center;
         }
         .other-images {
             display: flex;
+            flex-wrap: wrap;
             gap: 15px;
             justify-content: center;
-            flex-wrap: wrap;
             margin-top: 20px;
         }
-        .other-images img {
-            width: 120px;
-            height: auto;
+        .image-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 160px;
+        }
+        .image-card img {
+            width: 160px;
+            height: 140px;
             border-radius: 5px;
+        }
+        .image-card p {
+            margin-top: 5px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+    <style>
+        @media (max-width: 1200px) {
+            .container {
+                margin-left: 50px;
+                flex-direction: column;
+                align-items: center;
+            }
+            .right {
+                margin-left: 0;
+                text-align: center;
+            }
+            .left img {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .other-images {
+                gap: 10px;
+            }
+
+            .image-card {
+                width: 45%;
+            }
+
+            .image-card img {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-card {
+                width: 100%;
+            }
+
+            .right h2, .right p {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -70,7 +122,7 @@
         </div>
         <div class="right">
             <h2>{{ used_car.used_car_title }}</h2>
-            <p style="color: #f5f8f6;">Description:</p>
+            <p>Description:</p>
             <p>Mileage: {{ used_car.milage }} km</p>
             <p>{{ used_car.description }}</p>
             <a href="https://wa.me/+8801521400144?text=I'm interested in {{ used_car.used_car_title }} Check it out here: {{ request.build_absolute_uri }}"
@@ -81,10 +133,14 @@
     </div>
 
     <div class="car-images">
+        <h2 style="color: #f5f8f6;">Additional Images:</h2>
         <div class="other-images">
-            {% for image in images %}
+            {% for name, image in images %}
                 {% if image %}
-                    <img src="{{ image.url }}" alt="Car Image" onclick="showImage('{{ image.url }}')" style="cursor: pointer;">
+                    <div class="image-card">
+                        <img src="{{ image.url }}" alt="Car Image" onclick="showImage('{{ image.url }}')" style="cursor: pointer;">
+                        <p style="color:white;">{{ name }}</p>
+                    </div>                    
                 {% endif %}
             {% endfor %}
         </div>

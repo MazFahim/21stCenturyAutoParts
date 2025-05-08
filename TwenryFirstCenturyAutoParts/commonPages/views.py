@@ -44,14 +44,14 @@ def used_cars(request):
 def used_car_detail(request, car_id):
     used_car = get_object_or_404(UsedCars, pk=car_id)
     images = [
-        used_car.rightSideView, 
-        used_car.leftSideView, 
-        used_car.interiorView, 
-        used_car.backSideImage, 
-        used_car.extraImage, 
-        used_car.image1, 
-        used_car.image2, 
-        used_car.image3
+        ("Right Side", used_car.rightSideView),
+        ("Left Side", used_car.leftSideView),
+        ("Interior", used_car.interiorView),
+        ("Back Side", used_car.backSideImage),
+        ("Image 1", used_car.extraImage),
+        ("Image 2", used_car.image1),
+        ("Image 3", used_car.image2),
+        ("Image 4", used_car.image3),
     ]
     context = {
         'used_car': used_car,
