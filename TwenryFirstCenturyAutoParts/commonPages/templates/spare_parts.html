@@ -34,11 +34,42 @@
             color: black;
         }
     </style>
+    <style>
+        @media screen and (max-width: 1024px) {
+            .cars-container {
+                grid-template-columns: repeat(3, 1fr);
+                margin-left: 20px;
+            }
+            }
+
+            @media screen and (max-width: 768px) {
+            .cars-container {
+                grid-template-columns: repeat(2, 1fr);
+                margin-left: 10px;
+            }
+            }
+
+            @media screen and (max-width: 480px) {
+            .cars-container {
+                grid-template-columns: 1fr;
+                margin-left: 5px;
+            }
+
+            .car-card {
+                width: 100%;
+            }
+
+            .car-card img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
 </head>
 <body>
     {% include "_partialViews/_topNavBar.html" %}
 
-    <h2 style="margin-left: 50px;">Used Cars</h2>
+    <h1 style="margin-left: 50px;">Spare Parts</h1>
     <div class="cars-container">
         {% for parts in spareParts %}
             <a href="{% url 'spare_part_detail' parts.spare_part_id %}" class="car-card-link">
