@@ -98,19 +98,23 @@ def spare_parts_by_company(request, company_name):
 
 #search related functions
 def search_results(request):
-    query = request.GET.get('q', '')
-    # usedCars = UsedCars.objects.filter(used_car_title__icontains=query)
-    # spareParts = SparePart.objects.filter(spare_part_title__icontains=query)
-    usedCars = UsedCars.objects.filter(
-        Q(used_car_title__icontains=query) | Q(company__icontains=query)
-    ).distinct()
+    query = request.GET.get('q', '').strip()
 
-    spareParts = SparePart.objects.filter(
-        Q(spare_part_title__icontains=query) | 
-        Q(company__icontains=query) | 
-        Q(tags__icontains=query) | 
-        Q(categories__icontains=query)
-    ).distinct()
+    usedCars = []
+    spareParts = []
+    
+    if query:
+        usedCars = UsedCars.objects.filter(
+            Q(used_car_title__icontains=query) | Q(company__icontains=query)
+        ).distinct()
+
+        spareParts = SparePart.objects.filter(
+            Q(spare_part_title__icontains=query) | 
+            Q(company__icontains=query) | 
+            Q(tags__icontains=query) | 
+            Q(categories__icontains=query)
+        ).distinct()
+
     context = {
         'query': query,
         'usedCars': usedCars,
