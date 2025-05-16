@@ -6,6 +6,20 @@
     {% load static %}
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'logo/favicon-16x16.png' %}">
     <title>Car Services</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+    </style>
 </head>
 <body>
     {% include "_partialViews/_topNavBar.html" %}

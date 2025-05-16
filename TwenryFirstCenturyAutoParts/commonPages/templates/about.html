@@ -7,6 +7,16 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'logo/favicon-16x16.png' %}">
     <title>About</title>
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
         .about-section{
             padding: 50px;
             text-align: center;
@@ -64,5 +74,6 @@
         <p>We are friendly, helpful and a professional group of people. Our professional mechanics know how to handle a wide range of car services.</p>
         <p>We get the job done right for you. Same day serivce & car wash for most repairs and maintenance.</p>
     </div>
+    {% include "_partialViews/_footer.html" %}
 </body>
 </html>

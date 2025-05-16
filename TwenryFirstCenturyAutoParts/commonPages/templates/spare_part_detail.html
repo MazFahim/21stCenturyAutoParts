@@ -7,6 +7,18 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'logo/favicon-16x16.png' %}">
     <title>{{ spare_part.spare_part_title }}</title>
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
         body {
             position: relative;
             margin: 0;
@@ -193,5 +205,6 @@
             {% endfor %}
         </div>
     </div>
+    {% include "_partialViews/_footer.html" %}
 </body>
 </html>

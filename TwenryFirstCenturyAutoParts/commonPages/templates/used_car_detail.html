@@ -7,6 +7,18 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'logo/favicon-16x16.png' %}">
     <title>{{ used_car.used_car_title }}</title>
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
         body {
             position: relative;
             margin: 0;
@@ -152,6 +164,8 @@
         <img id="previewImage" src="" style="max-width:90%; max-height:90%; border-radius:10px;">
     </div>
     
+    {% include "_partialViews/_footer.html" %}
+
     <script>
         const modal = document.getElementById('previewModal');
         const previewImage = document.getElementById('previewImage');
