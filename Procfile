@@ -1,1 +1,1 @@
-web: gunicorn TwenryFirstCenturyAutoParts.wsgi:application
+web: gunicorn TwentyFirstCenturyAutoParts.wsgi:application
