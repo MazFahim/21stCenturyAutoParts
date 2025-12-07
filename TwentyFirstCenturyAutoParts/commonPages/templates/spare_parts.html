@@ -7,10 +7,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'logo/favicon-16x16.png' %}">
     <title>Spare Parts</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
 
         body {
@@ -23,7 +27,7 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 10px;
-            margin-left: 50px;
+            margin-left: 40px;
         }
 
         .car-card {
@@ -32,7 +36,7 @@
             margin: 10px;
             padding: 10px;
             text-align: center;
-            width: 200px;
+            width: 100%;
         }
         
         .car-card img {
@@ -44,6 +48,9 @@
         }
         .car-card h3 {
             margin: 0;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
         }
             
         .car-card-link {
@@ -54,26 +61,29 @@
     <style>
         @media screen and (max-width: 1024px) {
             .cars-container {
-                grid-template-columns: repeat(3, 1fr);
-                margin-left: 20px;
-            }
-            }
-
-            @media screen and (max-width: 768px) {
-            .cars-container {
                 grid-template-columns: repeat(2, 1fr);
-                margin-left: 10px;
+                 padding: 0 10px;
             }
-            }
+        }
 
-            @media screen and (max-width: 480px) {
+        @media screen and (max-width: 768px) {
             .cars-container {
                 grid-template-columns: repeat(2, 1fr);
                 margin-left: 5px;
             }
+            .car-card {
+                width: 220px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .cars-container {
+                grid-template-columns: repeat(2, 1fr);
+                margin-left: 2px;
+            }
 
             .car-card {
-                width: 100%;
+                width: 200px;
             }
 
             .car-card img {
