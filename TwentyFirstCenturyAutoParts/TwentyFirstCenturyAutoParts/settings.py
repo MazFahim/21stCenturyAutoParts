@@ -22,13 +22,15 @@ sys.path.append(BASE_DIR)
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8^()p5=@&@&-1$-(-q23*d@nsmjwia2v9q3my0zru(3iz!h(vd'
+# SECRET_KEY = 'django-insecure-8^()p5=@&@&-1$-(-q23*d@nsmjwia2v9q3my0zru(3iz!h(vd'
+# SECRET_KEY = '_=qi=9e3j_tl==c$mdri7egbfvp5a1w(^ujg%+kdh@&swdiy)@'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-# ALLOWED_HOSTS = []
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = ['twentyfirstcenturyautorepairs.com', 'www.twentyfirstcenturyautorepairs.com']
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'twentyfirstcenturyautorepairs.com').split(',')
 
 # Application definition
 
