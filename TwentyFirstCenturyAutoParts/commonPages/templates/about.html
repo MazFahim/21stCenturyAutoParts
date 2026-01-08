@@ -48,6 +48,12 @@
             font-size: 1.1em;
             line-height: 1.4;
         }
+        #foundersImages{
+            justify-content: center;
+            display: flex;
+            gap: 150px;
+            margin-bottom: 30px;
+        }
     </style>
 </head>
 <body>
@@ -69,7 +75,11 @@
 
     <div class="message-section">
         <h1>Messages</h1>
-        <img src="{% static 'images/FounderImage.jpeg' %}" alt="Founder's Image">
+        <div id="foundersImages">
+            <img src="{% static 'images/FounderImage.jpeg' %}" alt="Founder's Image">
+            <img src="{% static 'images/FounderImage2.JPG' %}" alt="Founder's Image">
+        </div>
+        
         <p><strong>Why choose us</strong> - We make auto repair and maintenance more convenient for you.</p>
         <p>We are friendly, helpful and a professional group of people. Our professional mechanics know how to handle a wide range of car services.</p>
         <p>We get the job done right for you. Same day serivce & car wash for most repairs and maintenance.</p>
