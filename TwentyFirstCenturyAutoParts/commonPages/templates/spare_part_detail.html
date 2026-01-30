@@ -100,6 +100,17 @@
         #description-list li {
             display: list-item !important; /* Forces list items to show bullets */
         }
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background-color 0.2s ease-in-out;
+        }
     </style>
     <style>
         @media screen and (max-width: 1024px) {
@@ -183,10 +194,11 @@
                     <li>{{ sentence }}</li>
                 {% endfor %}
             </ul>
-            <a href="https://wa.me/+8801521400144?text=I'm interested in {{ spare_part.spare_part_title }} Check it out here: {{ request.build_absolute_uri }}"
-             target="_blank"
-             style="display: inline-block; background-color: #25D366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px;">
-                Contact on WhatsApp</a>
+            <a href="https://wa.me/+971567751491"
+                target="_blank"
+                class="whatsapp-btn">
+                    Contact on WhatsApp
+            </a>
         </div>    
     </div>
     
