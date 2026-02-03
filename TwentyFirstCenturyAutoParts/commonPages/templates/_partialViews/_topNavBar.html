@@ -57,6 +57,9 @@
             margin: 0 15px;
             display: flex;
             align-items: center;
+        }
+        .search-container form {
+            width: 100%;
             position: relative;
         }
         .search-container input[type="text"] {
@@ -64,7 +67,6 @@
             border-radius: 15px;
             padding: 10px 35px 10px 12px;
             border: 1px solid #ccc;
-            width: 280px;
             box-sizing: border-box;
             font-size: 14px;
         }
@@ -151,19 +153,15 @@
             }
             .search-container {
                 width: 100%;
-                max-width: none;
                 margin-bottom: 10px;
+            }
+            .search-container form {
+                width: 100%;
+                position: relative;
             }
             .search-container input[type="text"] {
                 width: 100%;
-                /* margin-top: 10px; */
             }
-            /* .search-container form {
-                width: 100%;
-            }
-            .search-container {
-                width: 100%;
-            } */
         }
         @media screen and (max-width: 480px) {
             #logo {
@@ -195,12 +193,10 @@
             <li>
                 <div class="search-container">
                     <form action="{% url 'search_results' %}" method="GET">
-                        <div>
-                            <input type="text" placeholder="Search for cars or spare parts" class="search-box" name="q">
-                            <button type="submit">
-                                <img src="{% static 'icons-search.png' %}" alt="Search" style="height:21px;">
-                            </button>
-                        </div>
+                        <input type="text" placeholder="Search for cars or spare parts" class="search-box" name="q">
+                        <button type="submit">
+                            <img src="{% static 'icons-search.png' %}" alt="Search" style="height:21px;">
+                        </button>
                     </form>
                 </div>
             </li>
